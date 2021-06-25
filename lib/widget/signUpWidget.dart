@@ -1,9 +1,5 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:wallet/widget/google_Sign_In_Button_Widget.dart';
 
 class SignUpWidget extends StatelessWidget {

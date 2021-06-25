@@ -30,5 +30,7 @@ class HomePage extends StatelessWidget {
 }
 
 Widget buildloading() => Center(
-      child: CircularProgressIndicator(),
+      child: CircularProgressIndicator(
+        color: Colors.green,
+      ),
     );

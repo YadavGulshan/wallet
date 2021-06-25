@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:wallet/provider/google_sign_in.dart';
-// import 'package:wallet/widget/signUpWidget.dart';
 
 class GoogleSignInButtonWidget extends StatelessWidget {
   const GoogleSignInButtonWidget({Key? key}) : super(key: key);
