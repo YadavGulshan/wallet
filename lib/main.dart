@@ -16,13 +16,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        // primarySwatch: Colors.green,
+        primarySwatch: Colors.green,
         // brightness: Brightness.dark,
         textTheme: GoogleFonts.latoTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
       home: HomePage(),
+      // routes: {
+      //   "/testpage": (context) => Testingpage(),
+      // },
     );
   }
 }

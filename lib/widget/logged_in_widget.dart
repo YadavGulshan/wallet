@@ -2,9 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:wallet/pages/testing.dart';
 import 'package:wallet/provider/google_sign_in.dart';
+import 'inkwellButtonWIdget.dart';
 
-class LoggedInWidget extends StatelessWidget {
+class LoggedInWidget extends StatefulWidget {
+  @override
+  _LoggedInWidgetState createState() => _LoggedInWidgetState();
+}
+
+class _LoggedInWidgetState extends State<LoggedInWidget> {
   final user = FirebaseAuth.instance.currentUser;
 
   @override
@@ -34,9 +41,9 @@ class LoggedInWidget extends StatelessWidget {
               fontWeight: FontWeight.w100,
             ),
           ),
-          Spacer(),
-          Spacer(),
-          Spacer(),
+          Spacer(
+            flex: 3,
+          ),
           InkWell(
             child: Container(
               height: MediaQuery.of(context).size.height / 20,
@@ -65,6 +72,16 @@ class LoggedInWidget extends StatelessWidget {
               final provider =
                   Provider.of<GoogleSignInProvider>(context, listen: false);
               provider.logout();
+            },
+          ),
+          Spacer(
+            flex: 3,
+          ),
+          InWellButton(
+            text: "NextPage",
+            onClicked: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Testingpage()));
             },
           ),
           Spacer(),
