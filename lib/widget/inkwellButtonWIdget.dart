@@ -16,7 +16,7 @@ class InWellButton extends StatelessWidget {
           height: MediaQuery.of(context).size.height / 20,
           width: MediaQuery.of(context).size.height / 4,
           decoration: BoxDecoration(
-            color: Colors.green,
+            color: Colors.blue,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Row(

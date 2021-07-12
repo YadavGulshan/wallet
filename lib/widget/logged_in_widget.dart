@@ -12,80 +12,84 @@ class LoggedInWidget extends StatefulWidget {
 }
 
 class _LoggedInWidgetState extends State<LoggedInWidget> {
-  final user = FirebaseAuth.instance.currentUser;
+  final User? user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Spacer(),
-          CircleAvatar(
-            radius: 70,
-            backgroundColor: Colors.green,
-            backgroundImage: NetworkImage("${user!.photoURL}"),
-          ),
-          Spacer(),
-          Text(
-            "Hello ${user!.displayName}",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Spacer(),
+            CircleAvatar(
+              radius: 70,
+              backgroundColor: Colors.blue,
+              backgroundImage: NetworkImage(user!.photoURL.toString()),
             ),
-          ),
-          Text(
-            "${user!.email}",
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w100,
+            const Spacer(),
+            Text(
+              "Hello ${user!.displayName}",
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          Spacer(
-            flex: 3,
-          ),
-          InkWell(
-            child: Container(
-              height: MediaQuery.of(context).size.height / 20,
-              width: MediaQuery.of(context).size.height / 4,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    "Log Out",
-                    style: TextStyle(
-                      // fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: Colors.black,
+            Text(
+              user!.email.toString(),
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w100,
+              ),
+            ),
+            const Spacer(
+              flex: 3,
+            ),
+            InkWell(
+              child: Container(
+                height: MediaQuery.of(context).size.height / 20,
+                width: MediaQuery.of(context).size.height / 4,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const <Widget>[
+                    Text(
+                      "Log Out",
+                      style: TextStyle(
+                        // fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(20),
-              ),
+              onTap: () {
+                HapticFeedback.heavyImpact();
+                final GoogleSignInProvider provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                provider.logout();
+              },
             ),
-            onTap: () {
-              HapticFeedback.heavyImpact();
-              final provider =
-                  Provider.of<GoogleSignInProvider>(context, listen: false);
-              provider.logout();
-            },
-          ),
-          Spacer(
-            flex: 3,
-          ),
-          InWellButton(
-            text: "NextPage",
-            onClicked: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Testingpage()));
-            },
-          ),
-          Spacer(),
-        ],
+            const Spacer(
+              flex: 2,
+            ),
+            InWellButton(
+              text: "NextPage",
+              onClicked: () {
+                Navigator.of(context)
+                    // ignore: always_specify_types
+                    .push(MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const Testingpage()));
+              },
+            ),
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }
