@@ -34,7 +34,7 @@ class GoogleSignInButtonWidget extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
-            color: Colors.green,
+            color: Colors.blue,
             borderRadius: BorderRadius.circular(20),
           ),
         ),
