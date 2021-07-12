@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wallet/pages/HomePage.dart';
 
+// ignore: always_specify_types
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: HomePage(),
+      home: const HomePage(),
       // routes: {
       //   "/testpage": (context) => Testingpage(),
       // },

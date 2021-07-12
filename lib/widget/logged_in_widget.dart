@@ -74,9 +74,7 @@ class _LoggedInWidgetState extends State<LoggedInWidget> {
                 provider.logout();
               },
             ),
-            const Spacer(
-              flex: 2,
-            ),
+            const Spacer(),
             InWellButton(
               text: "NextPage",
               onClicked: () {
