@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         // brightness: Brightness.dark,
-        textTheme: GoogleFonts.latoTextTheme(
+        textTheme: GoogleFonts.aclonicaTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
