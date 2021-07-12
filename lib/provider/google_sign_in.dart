@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class GoogleSignInProvider extends ChangeNotifier {
-  final googleSignIn = GoogleSignIn();
+  final GoogleSignIn googleSignIn = GoogleSignIn();
   bool _isSigningIn = false;
   bool get isSigningIn => _isSigningIn;
 
@@ -12,15 +12,16 @@ class GoogleSignInProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  // ignore: always_specify_types
   Future login() async {
     isSigningIn = true;
-    final user = await googleSignIn.signIn();
+    final GoogleSignInAccount? user = await googleSignIn.signIn();
     if (user == null) {
       isSigningIn = false;
       return;
     } else {
-      final googleAuth = await user.authentication;
-      final credential = GoogleAuthProvider.credential(
+      final GoogleSignInAuthentication googleAuth = await user.authentication;
+      final OAuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
@@ -29,8 +30,8 @@ class GoogleSignInProvider extends ChangeNotifier {
     }
   }
 
-  void logout() async {
-    await googleSignIn.disconnect();
+  void logout() {
+    googleSignIn.disconnect();
     FirebaseAuth.instance.signOut();
   }
 }
