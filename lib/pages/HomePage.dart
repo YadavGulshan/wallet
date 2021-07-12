@@ -11,25 +11,28 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // ignore: always_specify_types
       body: ChangeNotifierProvider(
-        create: (context) => GoogleSignInProvider(),
+        create: (BuildContext context) => GoogleSignInProvider(),
+        // ignore: always_specify_types
         child: StreamBuilder(
             stream: FirebaseAuth.instance.authStateChanges(),
-            builder: (context, snapshot) {
-              final provider = Provider.of<GoogleSignInProvider>(context);
+            builder: (BuildContext context, AsyncSnapshot<Object?> snapshot) {
+              final GoogleSignInProvider provider =
+                  Provider.of<GoogleSignInProvider>(context);
               if (provider.isSigningIn) {
                 return buildloading();
               } else if (snapshot.hasData) {
                 return LoggedInWidget();
               }
-              return SignUpWidget();
+              return const SignUpWidget();
             }),
       ),
     );
   }
 }
 
-Widget buildloading() => Center(
+Widget buildloading() => const Center(
       child: CircularProgressIndicator(
         color: Colors.green,
       ),
