@@ -10,7 +10,7 @@ class SignUpWidget extends StatelessWidget {
   Widget build(BuildContext context) => buildSignUp(context);
   Widget buildSignUp(BuildContext context) => SafeArea(
         child: Column(
-          children: [
+          children: <Widget>[
             const Spacer(),
             SvgPicture.asset(
               "assets/images/light_house.svg",
@@ -21,7 +21,7 @@ class SignUpWidget extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 width: MediaQuery.of(context).size.width,
                 child: const Text(
                   "Welcome",
@@ -38,17 +38,17 @@ class SignUpWidget extends StatelessWidget {
             const Spacer(),
             const Spacer(),
             const Spacer(),
-            GoogleSignInButtonWidget(),
+            const GoogleSignInButtonWidget(),
             const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("Made With "),
-                const FaIcon(
+              children: const <Widget>[
+                Text("Made With "),
+                FaIcon(
                   FontAwesomeIcons.heart,
                   color: Colors.red,
                 ),
-                const Text(" in India"),
+                Text(" in India"),
               ],
             ),
             const SizedBox(
