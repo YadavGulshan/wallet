@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wallet/authentication/login_page.dart';
+import 'package:wallet/pages/add_coins.dart';
+import 'package:wallet/pages/home.dart';
+import 'package:wallet/pages/user_page.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 
@@ -17,17 +20,22 @@ class Testingpage extends StatefulWidget {
 
 class _TestingpageState extends State<Testingpage> {
   final User? user = FirebaseAuth.instance.currentUser;
+
+  int _page = 0;
+  // Some basic stuff
+  final Color white = Colors.white;
+  final MaterialAccentColor blueAccent = Colors.blueAccent;
+
+  List<Widget> tabs = <Widget>[
+    const home_page(),
+    const Add_Coins(),
+    const User_profile(),
+  ];
+  // final PageStorageBucket bucket = PageStorageBucket();
+  // ignore: non_constant_identifier_names
+  // Widget Screen = tabs[_page];
   @override
   Widget build(BuildContext context) {
-    int _page = 0;
-    final Color white = Colors.white;
-    final MaterialAccentColor blueAccent = Colors.blueAccent;
-    final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
-
-    final List<Widget> tabs = [
-      const HomePage(),
-    ];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -61,6 +69,8 @@ class _TestingpageState extends State<Testingpage> {
             setState(() {
               _page = index;
             });
+            // print("current index is $index");
+            // print("current page is $_page");
           },
         ),
       ),
