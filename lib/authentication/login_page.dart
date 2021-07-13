@@ -5,8 +5,8 @@ import 'package:wallet/provider/google_sign_in.dart';
 import 'package:wallet/widget/logged_in_widget.dart';
 import 'package:wallet/widget/signUpWidget.dart';
 
-class Login_page extends StatelessWidget {
-  const Login_page({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

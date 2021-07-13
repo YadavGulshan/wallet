@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: const Login_page(),
+      home: const LoginPage(),
       // routes: {
       //   "/testpage": (context) => Testingpage(),
       // },

@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class User_profile extends StatefulWidget {
-  const User_profile({Key? key}) : super(key: key);
+class UserProfile extends StatefulWidget {
+  const UserProfile({Key? key}) : super(key: key);
 
   @override
-  _User_profileState createState() => _User_profileState();
+  _UserProfileState createState() => _UserProfileState();
 }
 
-class _User_profileState extends State<User_profile> {
+class _UserProfileState extends State<UserProfile> {
   final User? user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {

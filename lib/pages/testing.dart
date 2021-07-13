@@ -2,14 +2,9 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wallet/authentication/login_page.dart';
 import 'package:wallet/pages/add_coins.dart';
 import 'package:wallet/pages/home.dart';
 import 'package:wallet/pages/user_page.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 
 class Testingpage extends StatefulWidget {
   const Testingpage({Key? key}) : super(key: key);
@@ -29,7 +24,7 @@ class _TestingpageState extends State<Testingpage> {
   List<Widget> tabs = <Widget>[
     const home_page(),
     const Add_Coins(),
-    const User_profile(),
+    const UserProfile(),
   ];
   // final PageStorageBucket bucket = PageStorageBucket();
   // ignore: non_constant_identifier_names
