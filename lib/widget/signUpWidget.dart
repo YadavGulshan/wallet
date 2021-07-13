@@ -48,7 +48,7 @@ class SignUpWidget extends StatelessWidget {
                   FontAwesomeIcons.heart,
                   color: Colors.red,
                 ),
-                Text(" in India"),
+                Text(" in India by Gulshan"),
               ],
             ),
             const SizedBox(
