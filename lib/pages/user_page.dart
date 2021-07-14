@@ -54,6 +54,7 @@ class _UserProfileState extends State<UserProfile> {
           const Spacer(),
           const Spacer(),
           const Spacer(),
+          // About Section of developer.
 
           // Log Out button.
           InWellButton(
