@@ -40,6 +40,8 @@ class _TestingpageState extends State<Testingpage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(height2 / 16),
         child: AppBar(
+          title: const Text("Wallet"),
+
           /// Automatically imply leading removes the back button from the appbar, if set to false.
           automaticallyImplyLeading: false,
           actions: <Widget>[
