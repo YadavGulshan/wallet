@@ -17,7 +17,6 @@ class _home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     // Height of the screen
     final double height = MediaQuery.of(context).size.height;
-    final Color blueAccent = Colors.blueAccent;
     // scaffold the app with the standard app bar and nav bar
     return Scaffold(
       appBar: PreferredSize(
@@ -41,7 +40,7 @@ class _home_pageState extends State<home_page> {
                 heightFactor: 1,
                 widthFactor: 1,
                 child: CircleAvatar(
-                  backgroundColor: blueAccent,
+                  backgroundColor: Colors.blueAccent,
                   // Show the image of current user.
                   backgroundImage: NetworkImage(user!.photoURL.toString()),
                 ),
@@ -53,6 +52,7 @@ class _home_pageState extends State<home_page> {
       body: Center(
         child: Column(
           children: <Widget>[
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -60,7 +60,22 @@ class _home_pageState extends State<home_page> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple,
+                  gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Colors.blue,
+                      Colors.purple,
+                      Colors.red,
+                    ],
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    "Wallet",
+                    textAlign: TextAlign.end,
+                    style: Theme.of(context).textTheme.headline3,
+                  ),
                 ),
               ),
             ),
@@ -69,6 +84,17 @@ class _home_pageState extends State<home_page> {
               "Work in Progess",
               style: Theme.of(context).textTheme.headline5,
             ),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
             const Spacer(),
             const Spacer(),
             const Spacer(),
