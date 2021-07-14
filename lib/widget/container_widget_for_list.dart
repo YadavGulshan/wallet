@@ -11,47 +11,33 @@ class MyConatianer extends StatelessWidget {
   final String mytext;
   final Widget routeToPage;
 
-  // List<Widget> sections = <Widget>[];
-
-  // Widget buildrow(String YourString, int i) => InkWell(
-  //       child: ListTile(
-  //         title: Text(
-  //           YourString.toString(),
-  //         ),
-  //       ),
-  //       onTap: () {
-  //         // Route to some page
-  //         MaterialPageRoute(builder: (BuildContext context) => sections[i]);
-  //       },
-  //     );
+  /// void _openMyPage() {
+  ///   Navigator.push<void>(
+  ///     context,
+  ///     MaterialPageRoute<void>(
+  ///       builder: (BuildContext context) => const MyPage(),
+  ///     ),
+  ///   );
+  /// }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         HapticFeedback.heavyImpact();
+
+        Navigator.push<void>(
+          context,
+          MaterialPageRoute<void>(
+              builder: (BuildContext context) => routeToPage),
+        );
       },
       child: Container(
         padding: const EdgeInsets.all(10),
         child: ListTile(
-          title: Text(mytext),
+          title: Text(mytext, style: const TextStyle(fontSize: 20)),
         ),
       ),
     );
   }
 }
-//   @override
-//   Widget build(BuildContext context) {
-//     return InkWell(
-//       onTap: () {
-//         HapticFeedback.heavyImpact();
-//         MaterialPageRoute<dynamic>(
-//             builder: (BuildContext context) => routeToPage);
-//       },
-//       splashColor: Colors.green,
-//       child: ListTile(
-//         title: Text(mytext),
-//       ),
-//     );
-//   }
-// }
