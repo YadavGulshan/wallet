@@ -23,6 +23,7 @@ class _UserProfileState extends State<UserProfile> {
     return Center(
       child: Column(
         children: <Widget>[
+          // Used spacer so that user profile image wont stick to the top of the screen.
           const Spacer(),
 
           // Avatar of current user.
@@ -62,7 +63,10 @@ class _UserProfileState extends State<UserProfile> {
             height: MediaQuery.of(context).size.height / 20,
             width: MediaQuery.of(context).size.width / 4,
             onClicked: () {
+              // Haptic feedback so that, the user knows that something happened.
               HapticFeedback.heavyImpact();
+
+              // Log out from the current user.
               final GoogleSignInProvider provider =
                   Provider.of<GoogleSignInProvider>(context, listen: false);
               provider.logout();

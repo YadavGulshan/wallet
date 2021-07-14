@@ -50,6 +50,7 @@ class _TestingpageState extends State<Testingpage> {
                 widthFactor: 1,
                 child: CircleAvatar(
                   backgroundColor: blueAccent,
+                  // Show the image of current user.
                   backgroundImage: NetworkImage(user!.photoURL.toString()),
                 ),
               ),
@@ -65,6 +66,8 @@ class _TestingpageState extends State<Testingpage> {
         animationDuration: const Duration(milliseconds: 300),
         color: blueAccent,
         height: height2 / 15,
+
+        // Things my Bottom Navig bar will be consisting...
         items: const <Widget>[
           Icon(Icons.home_outlined),
           Icon(Icons.add),
