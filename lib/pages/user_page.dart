@@ -37,6 +37,8 @@ class _UserProfileState extends State<UserProfile> {
         children: <Widget>[
           // Used spacer so that user profile image wont stick to the top of the screen.
           const Spacer(),
+          const Spacer(),
+          const Spacer(),
 
           // Avatar of current user.
           CircleAvatar(

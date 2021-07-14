@@ -37,29 +37,6 @@ class _TestingpageState extends State<Testingpage> {
     final double height2 = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(height2 / 16),
-        child: AppBar(
-          title: const Text("Wallet"),
-
-          /// Automatically imply leading removes the back button from the appbar, if set to false.
-          automaticallyImplyLeading: false,
-          actions: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                heightFactor: 1,
-                widthFactor: 1,
-                child: CircleAvatar(
-                  backgroundColor: blueAccent,
-                  // Show the image of current user.
-                  backgroundImage: NetworkImage(user!.photoURL.toString()),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
       body: tabs[_page],
 
       /// Our animated navigation bar.
