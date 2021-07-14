@@ -14,22 +14,35 @@ class GoogleSignInProvider extends ChangeNotifier {
 
   // ignore: always_specify_types
   Future login() async {
+    // When user clicks the sign-in button, the login function is executed.
+    // Therefore the isSigningIn flag is set to true.
     isSigningIn = true;
+
+    // The login function is asynchronous.
     final GoogleSignInAccount? user = await googleSignIn.signIn();
+
+    // If user does not have a Google account, the sign-in button is disabled.
     if (user == null) {
       isSigningIn = false;
       return;
-    } else {
+    }
+    // If Google Account exists, the user is signed in.
+    else {
       final GoogleSignInAuthentication googleAuth = await user.authentication;
       final OAuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
+
+      // The credential is used to sign in the user.
       await FirebaseAuth.instance.signInWithCredential(credential);
+
+      // Sign in is complete.
       isSigningIn = false;
     }
   }
 
+  // logout is a function that is executed when the user clicks the sign-out button.
   void logout() {
     googleSignIn.disconnect();
     FirebaseAuth.instance.signOut();
