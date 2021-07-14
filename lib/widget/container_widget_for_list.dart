@@ -11,21 +11,15 @@ class MyConatianer extends StatelessWidget {
   final String mytext;
   final Widget routeToPage;
 
-  /// void _openMyPage() {
-  ///   Navigator.push<void>(
-  ///     context,
-  ///     MaterialPageRoute<void>(
-  ///       builder: (BuildContext context) => const MyPage(),
-  ///     ),
-  ///   );
-  /// }
-
   @override
   Widget build(BuildContext context) {
+    // To make the tiles have a button like feature.
     return InkWell(
       onTap: () {
+        // Haptic feedback for letting the user know that something happened.
         HapticFeedback.heavyImpact();
 
+        // Routing to widgets.
         Navigator.push<void>(
           context,
           MaterialPageRoute<void>(
@@ -33,9 +27,22 @@ class MyConatianer extends StatelessWidget {
         );
       },
       child: Container(
+        // Padding is a good way to space out elements.
         padding: const EdgeInsets.all(10),
         child: ListTile(
-          title: Text(mytext, style: const TextStyle(fontSize: 20)),
+          title: Row(
+            // Spacing between the icon and the title.
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                mytext,
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              const Icon(Icons.arrow_forward_ios),
+            ],
+          ),
         ),
       ),
     );
