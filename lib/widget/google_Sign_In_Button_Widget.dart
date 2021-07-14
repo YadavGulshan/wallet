@@ -38,9 +38,14 @@ class GoogleSignInButtonWidget extends StatelessWidget {
           ),
         ),
         onTap: () {
+          // haptic feedback to let user know that something happened under the hood.
           HapticFeedback.heavyImpact();
+
+          // Executing SignIn provider.
           final GoogleSignInProvider provider =
               Provider.of<GoogleSignInProvider>(context, listen: false);
+
+          // Logging in.
           provider.login();
         },
       ),
