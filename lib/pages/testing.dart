@@ -77,8 +77,6 @@ class _TestingpageState extends State<Testingpage> {
           setState(() {
             _page = index;
           });
-          // print("current index is $index");
-          // print("current page is $_page");
         },
       ),
     );

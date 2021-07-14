@@ -23,12 +23,7 @@ class _UserProfileState extends State<UserProfile> {
   // Get The current user data from firebase.
   final User? user = FirebaseAuth.instance.currentUser;
 
-  List<String> terms = <String>[
-    "Account Info",
-    "Notification Settings",
-    "Invite a friend",
-    "About us"
-  ];
+  // Pages to be routed to.
   List<Widget> pagesToRoute = <Widget>[
     const AccountInfo(),
     const NotificationSetting(),
@@ -75,7 +70,7 @@ class _UserProfileState extends State<UserProfile> {
             routeToPage: NotificationSetting(),
           ),
           const MyConatianer(
-            mytext: "InviteFriend",
+            mytext: "Invite a Friend",
             routeToPage: InviteFriend(),
           ),
           const MyConatianer(
@@ -84,6 +79,7 @@ class _UserProfileState extends State<UserProfile> {
           ),
 
           const Spacer(),
+
           // Log Out button.
           InWellButton(
             backgroundcolor: Colors.redAccent,
@@ -100,6 +96,8 @@ class _UserProfileState extends State<UserProfile> {
               provider.logout();
             },
           ),
+
+          // Spacer so that button won't stick to the bottom of the screen.
           const Spacer(),
           const Spacer(),
         ],
