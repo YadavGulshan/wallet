@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:wallet/pages/userPages/Account_info.dart';
+import 'package:wallet/pages/userPages/Invite_a_Friend.dart';
+import 'package:wallet/pages/userPages/Notifications_Settings.dart';
+import 'package:wallet/pages/userPages/aboutUsPage.dart';
 import 'package:wallet/provider/google_sign_in.dart';
+import 'package:wallet/widget/container_widget_for_list.dart';
 import 'package:wallet/widget/inkwellButtonWIdget.dart';
 
 class UserProfile extends StatefulWidget {
@@ -18,6 +23,18 @@ class _UserProfileState extends State<UserProfile> {
   // Get The current user data from firebase.
   final User? user = FirebaseAuth.instance.currentUser;
 
+  List<String> terms = <String>[
+    "Account Info",
+    "Notification Settings",
+    "Invite a friend",
+    "About us"
+  ];
+  List<Widget> pagesToRoute = <Widget>[
+    const AccountInfo(),
+    const NotificationSetting(),
+    const InviteFriend(),
+    const AboutUs(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -48,14 +65,25 @@ class _UserProfileState extends State<UserProfile> {
           const Spacer(),
           const Spacer(),
           const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
+          // List view
+          const MyConatianer(
+            mytext: "Account Info",
+            routeToPage: AccountInfo(),
+          ),
+          const MyConatianer(
+            mytext: "Notification Settings",
+            routeToPage: NotificationSetting(),
+          ),
+          const MyConatianer(
+            mytext: "InviteFriend",
+            routeToPage: InviteFriend(),
+          ),
+          const MyConatianer(
+            mytext: "About Us",
+            routeToPage: AboutUs(),
+          ),
 
+          const Spacer(),
           // Log Out button.
           InWellButton(
             backgroundcolor: Colors.redAccent,
@@ -72,6 +100,7 @@ class _UserProfileState extends State<UserProfile> {
               provider.logout();
             },
           ),
+          const Spacer(),
           const Spacer(),
         ],
       ),
