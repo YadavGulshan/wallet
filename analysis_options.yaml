@@ -41,3 +41,7 @@ linter:
 
     # file_names issue
     file_names: false
+
+
+    # sort pub dependencies
+    sort_pub_dependencies: false

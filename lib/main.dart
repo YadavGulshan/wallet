@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wallet/pages/HomePage.dart';
+import 'package:wallet/authentication/login_page.dart';
 
 // ignore: always_specify_types
 Future main() async {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: const HomePage(),
+      home: const LoginPage(),
       // routes: {
       //   "/testpage": (context) => Testingpage(),
       // },

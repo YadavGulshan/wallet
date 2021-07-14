@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wallet/pages/testing.dart';
 import 'package:wallet/provider/google_sign_in.dart';
-import 'package:wallet/widget/logged_in_widget.dart';
 import 'package:wallet/widget/signUpWidget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
               if (provider.isSigningIn) {
                 return buildloading();
               } else if (snapshot.hasData) {
-                return LoggedInWidget();
+                return const Testingpage();
               }
               return const SignUpWidget();
             }),

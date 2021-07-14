@@ -1,12 +1,10 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:wallet/pages/add_coins.dart';
+import 'package:wallet/pages/home.dart';
+import 'package:wallet/pages/user_page.dart';
 
 class Testingpage extends StatefulWidget {
   const Testingpage({Key? key}) : super(key: key);
@@ -16,49 +14,69 @@ class Testingpage extends StatefulWidget {
 }
 
 class _TestingpageState extends State<Testingpage> {
+  // Current User data.
   final User? user = FirebaseAuth.instance.currentUser;
+
+  // Initial Page; i.e Homepage
+  int _page = 0;
+
+  // some defined colors.
+  final Color white = Colors.white;
+  final MaterialAccentColor blueAccent = Colors.blueAccent;
+
+  // list of widget which we want when user clicks on the specific button on navbar.
+  List<Widget> tabs = <Widget>[
+    const home_page(),
+    const Add_Coins(),
+    const UserProfile(),
+  ];
+
   @override
   Widget build(BuildContext context) {
+    // Get height of the screen.
+    final double height2 = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text("Hello, ${user!.displayName}",
-            textAlign: TextAlign.center,
-            style: GoogleFonts.abel(
-                textStyle: const TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ))),
-        automaticallyImplyLeading: false,
-        // actions: <Widget>[
-        //   Padding(
-        //     padding: const EdgeInsets.all(8.0),
-        //     child: Center(
-        //       heightFactor: 1,
-        //       widthFactor: 1,
-        //       child: CircleAvatar(
-        //         backgroundColor: Colors.lightBlue,
-        //         backgroundImage: NetworkImage(user!.photoURL.toString()),
-        //       ),
-        //     ),
-        //   )
-        // ],
-      ),
-      body: Center(
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height / 2,
-          width: MediaQuery.of(context).size.width,
-          child: InkWell(
-            onTap: () {
-              HapticFeedback.heavyImpact();
-            },
-            child: SvgPicture.asset(
-              "assets/images/penguin.svg",
-            ),
-          ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(height2 / 16),
+        child: AppBar(
+          // Automatically imply leading removes the back button from the appbar, if set to false.
+          automaticallyImplyLeading: false,
+          actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                heightFactor: 1,
+                widthFactor: 1,
+                child: CircleAvatar(
+                  backgroundColor: blueAccent,
+                  backgroundImage: NetworkImage(user!.photoURL.toString()),
+                ),
+              ),
+            )
+          ],
         ),
+      ),
+      body: tabs[_page],
+
+      // Our animated navigation bar.
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: white,
+        animationDuration: const Duration(milliseconds: 300),
+        color: blueAccent,
+        height: height2 / 15,
+        items: const <Widget>[
+          Icon(Icons.home_outlined),
+          Icon(Icons.add),
+          Icon(Icons.account_circle_outlined),
+        ],
+        onTap: (int index) {
+          setState(() {
+            _page = index;
+          });
+          // print("current index is $index");
+          // print("current page is $_page");
+        },
       ),
     );
   }
