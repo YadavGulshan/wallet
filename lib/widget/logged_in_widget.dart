@@ -1,3 +1,5 @@
+// Not using for now
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -76,6 +78,8 @@ class _LoggedInWidgetState extends State<LoggedInWidget> {
             ),
             const Spacer(),
             InWellButton(
+              height: MediaQuery.of(context).size.height / 20,
+              width: MediaQuery.of(context).size.height / 4,
               text: "NextPage",
               onClicked: () {
                 Navigator.of(context)

@@ -14,26 +14,33 @@ class Testingpage extends StatefulWidget {
 }
 
 class _TestingpageState extends State<Testingpage> {
+  // Current User data.
   final User? user = FirebaseAuth.instance.currentUser;
 
+  // Initial Page; i.e Homepage
   int _page = 0;
-  // Some basic stuff
+
+  // some defined colors.
   final Color white = Colors.white;
   final MaterialAccentColor blueAccent = Colors.blueAccent;
 
+  // list of widget which we want when user clicks on the specific button on navbar.
   List<Widget> tabs = <Widget>[
     const home_page(),
     const Add_Coins(),
     const UserProfile(),
   ];
-  // final PageStorageBucket bucket = PageStorageBucket();
-  // ignore: non_constant_identifier_names
-  // Widget Screen = tabs[_page];
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
+    // Get height of the screen.
+    final double height2 = MediaQuery.of(context).size.height;
+
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(height2 / 16),
+        child: AppBar(
+          // Automatically imply leading removes the back button from the appbar, if set to false.
           automaticallyImplyLeading: false,
           actions: <Widget>[
             Padding(
@@ -49,25 +56,27 @@ class _TestingpageState extends State<Testingpage> {
             )
           ],
         ),
-        body: tabs[_page],
-        bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: white,
-          animationDuration: const Duration(milliseconds: 300),
-          color: blueAccent,
-          height: 55,
-          items: const <Widget>[
-            Icon(Icons.home),
-            Icon(Icons.add),
-            Icon(Icons.account_circle_outlined),
-          ],
-          onTap: (int index) {
-            setState(() {
-              _page = index;
-            });
-            // print("current index is $index");
-            // print("current page is $_page");
-          },
-        ),
+      ),
+      body: tabs[_page],
+
+      // Our animated navigation bar.
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: white,
+        animationDuration: const Duration(milliseconds: 300),
+        color: blueAccent,
+        height: height2 / 15,
+        items: const <Widget>[
+          Icon(Icons.home_outlined),
+          Icon(Icons.add),
+          Icon(Icons.account_circle_outlined),
+        ],
+        onTap: (int index) {
+          setState(() {
+            _page = index;
+          });
+          // print("current index is $index");
+          // print("current page is $_page");
+        },
       ),
     );
   }
