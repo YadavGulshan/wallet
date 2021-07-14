@@ -2,9 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wallet/authentication/login_page.dart';
-import 'package:wallet/pages/userPages/Account_info.dart';
 import 'package:wallet/pages/userPages/Invite_a_Friend.dart';
-import 'package:wallet/pages/userPages/Notifications_Settings.dart';
 import 'package:wallet/pages/userPages/aboutUsPage.dart';
 
 // ignore: always_specify_types
@@ -28,11 +26,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const LoginPage(),
-      routes: {
+      routes: <String, WidgetBuilder>{
         "/aboutus": (BuildContext context) => const AboutUs(),
-        "/AccountInfo": (BuildContext context) => const AccountInfo(),
         "/Invite": (BuildContext context) => const InviteFriend(),
-        "/Notification": (BuildContext context) => const NotificationSetting(),
       },
     );
   }
