@@ -8,13 +8,13 @@ class InWellButton extends StatelessWidget {
     required this.onClicked,
     required this.height,
     required this.width,
-    this.backgroundcolor = Colors.blue,
+    this.gradienColor = Colors.blue,
     this.borderradius = 20.0,
   }) : super(key: key);
 
   final String text;
   final VoidCallback onClicked;
-  final Color backgroundcolor;
+  final Color gradienColor;
   final double height;
   final double width;
   final double borderradius;
@@ -27,9 +27,12 @@ class InWellButton extends StatelessWidget {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          color: backgroundcolor,
-          borderRadius: BorderRadius.circular(borderradius),
-        ),
+            borderRadius: BorderRadius.circular(borderradius),
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[Colors.blue, Colors.white],
+            )),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[

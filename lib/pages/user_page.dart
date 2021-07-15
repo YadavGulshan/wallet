@@ -84,7 +84,6 @@ class _UserProfileState extends State<UserProfile> {
 
           // Log Out button.
           InWellButton(
-            backgroundcolor: Colors.redAccent,
             text: "Log Out",
             height: MediaQuery.of(context).size.height / 20,
             width: MediaQuery.of(context).size.width / 4,
