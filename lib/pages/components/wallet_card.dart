@@ -18,9 +18,10 @@ class WalletCard extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: <Color>[
-              Colors.purple,
-              Colors.red,
-              Colors.yellow,
+              Color(0xff924ff7),
+              Color(0xfff74fa9),
+              Color(0xfff7684f),
+              Color(0xffd3f74f),
             ],
           ),
         ),

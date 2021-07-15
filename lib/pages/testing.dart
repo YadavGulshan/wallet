@@ -30,7 +30,12 @@ class _TestingpageState extends State<Testingpage> {
     const Add_Coins(),
     const UserProfile(),
   ];
-
+  List<Color> myColors = <Color>[
+    const Color(0xff1ced8f),
+    const Color(0xff1cb9ed),
+    const Color(0xffd3f74f),
+    // Colors.blueAccent,
+  ];
   @override
   Widget build(BuildContext context) {
     /// Get height of the screen.
@@ -43,7 +48,7 @@ class _TestingpageState extends State<Testingpage> {
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: white,
         animationDuration: const Duration(milliseconds: 300),
-        color: blueAccent,
+        color: myColors[_page],
         height: height2 / 15,
 
         /// Things my Bottom Navig bar will be consisting...

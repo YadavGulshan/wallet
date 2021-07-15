@@ -13,11 +13,19 @@ class GoogleSignInButtonWidget extends StatelessWidget {
       padding: const EdgeInsets.all(14),
       child: InkWell(
         child: Container(
-          height: MediaQuery.of(context).size.height / 20,
+          height: MediaQuery.of(context).size.height / 18,
           width: MediaQuery.of(context).size.height / 4,
           decoration: BoxDecoration(
-            color: Colors.blue,
             borderRadius: BorderRadius.circular(20),
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[
+                Colors.orange,
+                Colors.white,
+                Colors.green,
+              ],
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

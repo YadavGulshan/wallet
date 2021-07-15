@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:wallet/pages/components/fade_transition.dart';
-
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'components/wallet_card.dart';
 
 // ignore: camel_case_types
@@ -51,7 +51,7 @@ class _home_pageState extends State<home_page> {
       ),
       body: Center(
         child: Container(
-          // color: Colors.grey,
+          // color: const Color(0xff1ced8f),
           padding: const EdgeInsets.all(8.0),
           // color: Colors.black,
           child: Stack(children: <Widget>[
@@ -61,11 +61,17 @@ class _home_pageState extends State<home_page> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 20,
                 ),
-                const Text(
-                  "BufferOverflow.me",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30,
+                InkWell(
+                  onTap: () async {
+                    HapticFeedback.heavyImpact();
+                    await launch("https://bufferoverflow.me");
+                  },
+                  child: const Text(
+                    "BufferOverflow.me",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
                   ),
                 ),
               ],
