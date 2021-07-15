@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:wallet/pages/components/fade_transition.dart';
 
 import 'components/wallet_card.dart';
 
@@ -50,6 +51,7 @@ class _home_pageState extends State<home_page> {
       ),
       body: Center(
         child: Container(
+          // color: Colors.grey,
           padding: const EdgeInsets.all(8.0),
           // color: Colors.black,
           child: Stack(children: <Widget>[
@@ -57,11 +59,14 @@ class _home_pageState extends State<home_page> {
               children: <Widget>[
                 const WalletCard(),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 16,
+                  height: MediaQuery.of(context).size.height / 20,
                 ),
-                Text(
-                  "BufferOverflow",
-                  style: Theme.of(context).textTheme.headline3,
+                const Text(
+                  "BufferOverflow.me",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
                 ),
               ],
             ),
@@ -87,12 +92,9 @@ class _home_pageState extends State<home_page> {
                                 topRight: Radius.circular(25),
                               ),
                             ),
-                            child: Column(
-                              children: <Widget>[
-                                SizedBox(
-                                  height: MediaQuery.of(context).size.height,
-                                )
-                              ],
+                            child: Container(
+                              height: MediaQuery.of(context).size.height,
+                              // child: //TODO: Add the feature of getting the no. of coins from firebase.
                             ));
                       });
                 }),
