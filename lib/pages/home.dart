@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'components/wallet_card.dart';
+
 // ignore: camel_case_types
 class home_page extends StatefulWidget {
   const home_page({Key? key}) : super(key: key);
@@ -47,74 +49,54 @@ class _home_pageState extends State<home_page> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: MediaQuery.of(context).size.height / 4,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  gradient: const LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: <Color>[
-                      Colors.purple,
-                      Colors.red,
-                      Colors.yellow,
-                    ],
-                  ),
+        child: Container(
+          padding: const EdgeInsets.all(8.0),
+          // color: Colors.black,
+          child: Stack(children: <Widget>[
+            Column(
+              children: <Widget>[
+                const WalletCard(),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 16,
                 ),
-                child: Center(
-                  child: Column(
-                    children: <Widget>[
-                      const Spacer(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: <Widget>[
-                          const Text(
-                            "Balance:",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500,
+                Text(
+                  "BufferOverflow",
+                  style: Theme.of(context).textTheme.headline3,
+                ),
+              ],
+            ),
+            DraggableScrollableSheet(
+                initialChildSize: 0.6,
+                minChildSize: 0.5,
+                builder: (BuildContext context,
+                    ScrollController myScrollController) {
+                  return ListView.builder(
+                      controller: myScrollController,
+                      itemCount: 1,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              // gradient: LinearGradient(
+                              //   begin: Alignment.topLeft,
+                              //   end: Alignment.bottomRight,
+                              //   colors: <Color],
+                              // ),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(25),
+                                topRight: Radius.circular(25),
+                              ),
                             ),
-                          ),
-                          Text(
-                            "9999999",
-                            style: Theme.of(context).textTheme.headline3,
-                          ),
-                        ],
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            const Spacer(),
-            Text(
-              "Work in Progess",
-              style: Theme.of(context).textTheme.headline5,
-            ),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-          ],
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height,
+                                )
+                              ],
+                            ));
+                      });
+                }),
+          ]),
         ),
       ),
     );
