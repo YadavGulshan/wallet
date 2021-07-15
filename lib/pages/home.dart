@@ -23,9 +23,7 @@ class _home_pageState extends State<home_page> {
         child: AppBar(
           title: Text(
             "Hello, ${user!.displayName.toString()}",
-            style: const TextStyle(
-              color: Colors.black,
-            ),
+            style: Theme.of(context).textTheme.headline6,
           ),
           elevation: 0.0,
           backgroundColor: Colors.white,
@@ -63,17 +61,34 @@ class _home_pageState extends State<home_page> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: <Color>[
-                      Colors.blue,
                       Colors.purple,
                       Colors.red,
+                      Colors.yellow,
                     ],
                   ),
                 ),
                 child: Center(
-                  child: Text(
-                    "Wallet",
-                    textAlign: TextAlign.end,
-                    style: Theme.of(context).textTheme.headline3,
+                  child: Column(
+                    children: <Widget>[
+                      const Spacer(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          const Text(
+                            "Balance:",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            "9999999",
+                            style: Theme.of(context).textTheme.headline3,
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                    ],
                   ),
                 ),
               ),
