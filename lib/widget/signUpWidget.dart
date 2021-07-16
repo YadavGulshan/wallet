@@ -12,12 +12,16 @@ class SignUpWidget extends StatelessWidget {
         child: Column(
           children: <Widget>[
             const Spacer(),
+
+            // Using a SVG file, so that it can be used irrespective of device size.
             SvgPicture.asset(
               "assets/images/light_house.svg",
               height: MediaQuery.of(context).size.height / 4,
               width: MediaQuery.of(context).size.width,
             ),
             const Spacer(),
+
+            // Alligning Welcome text at center, though it can also be achieved using Center widget.
             Align(
               alignment: Alignment.centerLeft,
               child: Container(
@@ -40,6 +44,8 @@ class SignUpWidget extends StatelessWidget {
             const Spacer(),
             const GoogleSignInButtonWidget(),
             const Spacer(),
+
+            // Some recognition for me :)
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const <Widget>[
