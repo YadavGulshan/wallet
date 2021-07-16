@@ -39,7 +39,7 @@ class _Add_CoinsState extends State<Add_Coins> {
     'ODOKNDOB',
   ];
   final List<int> colorCodes = <int>[600, 500, 100];
-  TextEditingController _amountController = TextEditingController();
+  final TextEditingController _amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _Add_CoinsState extends State<Add_Coins> {
       body: RefreshIndicator(
         onRefresh: () async {
           await Future.delayed(
-            Duration(
+            const Duration(
               milliseconds: 50000,
             ),
           ); // Lol change this!

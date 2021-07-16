@@ -16,7 +16,7 @@ class home_page extends StatefulWidget {
 // ignore: camel_case_types
 class _home_pageState extends State<home_page> {
   TextEditingController textcontroller = TextEditingController();
-  List<String> TestString = <String>[
+  List<String> testString = <String>[
     "OBODSO",
     "OBODSO",
     "OBODSO",
@@ -109,7 +109,7 @@ class _home_pageState extends State<home_page> {
                       child: BoughtCoins(
                         scrollController: myScrollController,
                         amountController: textcontroller,
-                        coinName: TestString,
+                        coinName: testString,
                       ));
                 }),
           ]),
