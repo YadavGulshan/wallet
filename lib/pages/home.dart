@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'UserPage/list_comp.dart';
 import 'components/wallet_card.dart';
 
 // ignore: camel_case_types
@@ -14,7 +15,25 @@ class home_page extends StatefulWidget {
 
 // ignore: camel_case_types
 class _home_pageState extends State<home_page> {
+  TextEditingController textcontroller = TextEditingController();
+  List<String> TestString = <String>[
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+    "OBODSO",
+  ];
   final User? user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     // Height of the screen
@@ -81,28 +100,17 @@ class _home_pageState extends State<home_page> {
                 minChildSize: 0.5,
                 builder: (BuildContext context,
                     ScrollController myScrollController) {
-                  return ListView.builder(
-                      controller: myScrollController,
-                      itemCount: 1,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                            decoration: const BoxDecoration(
-                              color: Colors.white,
-                              // gradient: LinearGradient(
-                              //   begin: Alignment.topLeft,
-                              //   end: Alignment.bottomRight,
-                              //   colors: <Color],
-                              // ),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(25),
-                                topRight: Radius.circular(25),
-                              ),
-                            ),
-                            child: Container(
-                              height: MediaQuery.of(context).size.height,
-                              // child: //TODO: Add the feature of getting the no. of coins from firebase.
-                            ));
-                      });
+                  return Container(
+                      // color: Colors.black,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: BoughtCoins(
+                        scrollController: myScrollController,
+                        amountController: textcontroller,
+                        coinName: TestString,
+                      ));
                 }),
           ]),
         ),

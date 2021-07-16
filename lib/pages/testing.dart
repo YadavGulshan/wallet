@@ -32,7 +32,7 @@ class _TestingpageState extends State<Testingpage> {
   ];
   List<Color> myColors = <Color>[
     const Color(0xff1ced8f),
-    const Color(0xff1cb9ed),
+    const Color(0xff63ECFF),
     const Color(0xffd3f74f),
     // Colors.blueAccent,
   ];
@@ -46,7 +46,7 @@ class _TestingpageState extends State<Testingpage> {
 
       /// Our animated navigation bar.
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: white,
+        backgroundColor: Colors.transparent,
         animationDuration: const Duration(milliseconds: 300),
         color: myColors[_page],
         height: height2 / 15,

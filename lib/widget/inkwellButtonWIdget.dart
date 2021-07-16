@@ -31,7 +31,10 @@ class InWellButton extends StatelessWidget {
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: <Color>[Colors.blue, Colors.white],
+              colors: <Color>[
+                Colors.red,
+                Colors.white,
+              ],
             )),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
