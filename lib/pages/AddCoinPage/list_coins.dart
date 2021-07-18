@@ -2,21 +2,19 @@ import 'package:flutter/material.dart';
 
 class ListCoin extends StatelessWidget {
   const ListCoin({
+    // Constructor parameters
     Key? key,
     required this.coinName,
     required this.amountController,
-    //  this.scrollController = ScrollController(),
   }) : super(key: key);
 
+  // Since our widget is constant, we use final to prevent
+  // any future changes to the coin name or amount.
   final List<String> coinName;
   final TextEditingController amountController;
-  // final ScrollController scrollController;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      // Scroll Controller.
-      // controller: scrollController,
-
       // No. of coins.
       itemCount: coinName.length,
 
@@ -26,11 +24,15 @@ class ListCoin extends StatelessWidget {
         return InkWell(
           splashColor: const Color(0xff03fcdb),
           onTap: () {
+            // Show dialog when the user tap on the item.
             showDialog<String>(
               context: context,
+
+              // Alert message.
               builder: (BuildContext context) => AlertDialog(
                 title: Text(coinName[index]),
                 content: TextFormField(
+                  // Amount controller.
                   controller: amountController,
                   keyboardType: TextInputType.number,
                 ),
@@ -68,6 +70,7 @@ class ListCoin extends StatelessWidget {
                       height: 50,
                       child: Row(
                         children: <Widget>[
+                          // Coin Logo.
                           Image.asset(
                             "assets/images/google.jpg",
                             height: 50,
@@ -92,12 +95,13 @@ class ListCoin extends StatelessWidget {
                               const Spacer(),
                             ],
                           ),
-
-                          // Price
                         ],
                       ),
                     ),
+
+                    // Coin price.
                     const Text("99999", style: TextStyle(fontSize: 20)),
+                    // TODO: Change this to a stateful widget. And change the price on by using constant network calls.
                   ],
                 )),
           ),
