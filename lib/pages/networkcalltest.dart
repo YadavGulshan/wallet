@@ -1,30 +1,37 @@
-// import 'package:http/http.dart' as http;
-// import 'dart:async';
-// import 'dart:convert';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-// // https://x.wazirx.com/api/v2/global_configs
+Future<Coin> FetchCoins() async {
+  final response =
+      await http.get(Uri.parse("https://x.wazirx.com/api/v2/global_configs"));
+
+  if (response.statusCode == 200) {
+    return Coin.fromJson(response.body);
+  } else {
+    throw Exception("Failed to load coins from the API");
+  }
+}
+
+class Coin {
+  Coin({
+    required this.name,
+    required this.subName,
+    required this.iconLink,
+  });
+  List<String> name;
+  List<String> subName;
+  List<String> iconLink;
 
 
-// Future<http.Response> fetchGlobalConfigs() {
-//   return http.get(Uri.parse('https://x.wazirx.com/api/v2/global_configs'));
-// }
+  // ignore: sort_constructors_first
+  factory Coin.fromJson(String json) {
+    for (var i = 0; i < 224; i++) {
+      name.add(json["currencies"][i]["name"]);
+    }
 
-// class Coins {
-//   Coins({
-//     required this.userId,
-//     required this.id,
-//     required this.title,
-//   });
-//   final int userId;
-//   final int id;
-//   final String title;
+}
 
-//   factory Coins.fromJson(Map<String, dynamic> json) {
-//     return Coins(
-//       userId: json['userId'],
-//       id: json['id'],
-//       title: json['title'],
-//     );
-//   }
-
-// }
+main(List<String> args) {
+  final coins = FetchCoins();
+}

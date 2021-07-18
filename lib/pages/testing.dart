@@ -27,7 +27,7 @@ class _TestingpageState extends State<Testingpage> {
   // list of widget which we want when user clicks on the specific button on navbar.
   List<Widget> tabs = <Widget>[
     const home_page(),
-    const Add_Coins(),
+    const AddCoinPage(),
     const UserProfile(),
   ];
   List<Color> myColors = <Color>[
