@@ -26,12 +26,20 @@ class BoughtCoins extends StatelessWidget {
         return InkWell(
           splashColor: const Color(0xff03fcdb),
           onTap: () {
+            // Our dialog
             showDialog<String>(
               context: context,
+
+              // Alert dialog.
               builder: (BuildContext context) => AlertDialog(
+                // Title.
                 title: Text(coinName[index]),
+
+                // Content.
                 content: TextFormField(
                   controller: amountController,
+
+                  // Set the keyboard type to numeric.
                   keyboardType: TextInputType.number,
                 ),
                 actions: <Widget>[
@@ -69,6 +77,7 @@ class BoughtCoins extends StatelessWidget {
                       child: Row(
                         children: <Widget>[
                           Image.asset(
+                            // Icon of the coin
                             "assets/images/google.jpg",
                             height: 50,
                             width: 40,
@@ -97,6 +106,8 @@ class BoughtCoins extends StatelessWidget {
                         ],
                       ),
                     ),
+
+                    // realtime price
                     const Text("99999", style: TextStyle(fontSize: 20)),
                   ],
                 )),

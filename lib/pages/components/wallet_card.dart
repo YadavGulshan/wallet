@@ -8,15 +8,23 @@ class WalletCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+      // Paading of the container.
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        // height and width of our container.
         height: MediaQuery.of(context).size.height / 4,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
+          // Rounded corners.
           borderRadius: BorderRadius.circular(20),
+
+          // Gradient
           gradient: const LinearGradient(
+            // From where to where the color changes.
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
+
+            // Array of colors.
             colors: <Color>[
               Color(0xff924ff7),
               Color(0xfff74fa9),
@@ -39,6 +47,8 @@ class WalletCard extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+
+                  // Total balance.
                   Text(
                     "9999999",
                     style: Theme.of(context).textTheme.headline3,

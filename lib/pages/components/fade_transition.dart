@@ -58,7 +58,9 @@ class _MySlideTransitionWidgetState extends State<MySlideTransitionWidget>
   then be sure to subscribe and unsubscribe properly in initState, didUpdateWidget, and dispose:
 
   In initState, subscribe to the object.
-  In didUpdateWidget unsubscribe from the old object and subscribe to the new one if the updated widget configuration requires replacing the object.
+  In didUpdateWidget unsubscribe from the old object and subscribe to the new one 
+  if the updated widget configuration requires replacing the object.
+
   In dispose, unsubscribe from the object.
   Implementations of this method should end with a call to the inherited method, as in super.dispose().
 */
@@ -71,7 +73,10 @@ class _MySlideTransitionWidgetState extends State<MySlideTransitionWidget>
   @override
   Widget build(BuildContext context) {
     return SlideTransition(
+      // Animatation var which has all the information about the animation.
       position: _offsetAnimation,
+
+      // The widget that is being animated.
       child: const Padding(
         padding: EdgeInsets.all(8.0),
         child: Text(
