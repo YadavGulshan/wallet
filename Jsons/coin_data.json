@@ -1,0 +1,237 @@
+{
+    "currencies": [{
+            "type": "usdt",
+            "icon": "https://media.wazirx.com/media/usdt/<SIZE>.png",
+            "depositNote": "• Minimum deposit of 0 USDT, deposit below that cannot be recovered.\n• Please deposit only USDT on this address. If you deposit any other coin, it will be lost forever.\n• USDT ERC-20 support only, OMNI wallet is not supported.",
+            "withdrawalNote": "Please cross-check the destination address. Withdrawals to Smart Contract Addresses, payments or participation in ICOs/Airdrops are not supported and will be lost forever. Withdrawal requests cannot be cancelled after submission. Withdrawals are only supported for ERC-20 wallets, OMNI wallets are not supported.",
+            "quotePrecisions": {
+                "btc": 8,
+                "inr": 2,
+                "usdt": 3,
+                "idr": 0,
+                "rub": 2,
+                "uah": 2,
+                "ngn": 2,
+                "sar": 2,
+                "eur": 2,
+                "try": 2
+            },
+            "code": 38,
+            "name": "Tether USD",
+            "category": "crypto",
+            "isQuote": true,
+            "quoteSortOrder": 2,
+            "precision": 2,
+            "walletPrecision": 6,
+            "withdrawFee": 20,
+            "minWithdrawAmount": 40,
+            "maxWithdrawAmount": 20000,
+            "address_url": "https://etherscan.io/address/#{address}",
+            "blockchain_url": "https://etherscan.io/tx/#{txn}",
+            "cryptoRate": {
+                "isPreferredQuote": true
+            },
+            "confirmations": 30,
+            "statusInfo": {
+                "android": {
+                    "displayInterval": 1,
+                    "id": "34",
+                    "maxDisplayCount": 999999,
+                    "title": "IMPORTANT read this first",
+                    "message": "We have changed USDT block-chain from OMNI to ERC-20 standards. Make sure the wallet that you use to deposit supports ERC-20. Please note OMNI deposit wallet will not be supported. If you have done a deposit please contact support.",
+                    "type": "Warning"
+                },
+                "iOS": {
+                    "displayInterval": 1,
+                    "id": "34",
+                    "maxDisplayCount": 999999,
+                    "title": "IMPORTANT read this first",
+                    "message": "We have changed USDT block-chain from OMNI to ERC-20 standards. Make sure the wallet that you use to deposit supports ERC-20. Please note OMNI deposit wallet will not be supported. If you have done a deposit please contact support.",
+                    "type": "Warning"
+                },
+                "web": {
+                    "displayInterval": 1,
+                    "id": "34",
+                    "maxDisplayCount": 999999,
+                    "message": "IMPORTANT!!!. We have changed USDT block-chain from OMNI to ERC-20 standards. Make sure the wallet that you use to deposit supports ERC-20. Please note OMNI deposit wallet will not be supported. If you have done a deposit please contact support.",
+                    "type": "Warning"
+                }
+            },
+            "isUnsupported": true
+        },
+        {
+            "type": "btc",
+            "icon": "https://media.wazirx.com/media/btc/<SIZE>.png",
+            "depositNote": "Please deposit only BTC to this address. If you deposit any other coins, it will be lost forever.",
+            "withdrawalNote": "Please cross-check the destination address. Withdrawals to Smart Contract Addresses, payments or participation in ICOs/Airdrops are not supported and will be lost forever. Withdrawal requests cannot be cancelled after submission.",
+            "quotePrecisions": {
+                "btc": 8,
+                "inr": 0,
+                "usdt": 0,
+                "idr": 0,
+                "rub": 0,
+                "uah": 0,
+                "ngn": 0,
+                "sar": 0,
+                "eur": 0,
+                "try": 0
+            },
+            "code": 2,
+            "name": "Bitcoin",
+            "category": "crypto",
+            "isQuote": true,
+            "quoteSortOrder": 4,
+            "precision": 5,
+            "walletPrecision": 8,
+            "withdrawFee": 0.0006,
+            "minWithdrawAmount": 0.001,
+            "maxWithdrawAmount": 3,
+            "address_url": "https://live.blockcypher.com/btc/address/#{address}",
+            "blockchain_url": "https://live.blockcypher.com/btc/tx/#{txn}",
+            "cryptoRate": {
+                "isPreferredQuote": true
+            },
+            "confirmations": 4,
+            "isUnsupported": true
+        },
+        {
+            "type": "inr",
+            "icon": "https://media.wazirx.com/media/inr/<SIZE>.png",
+            "symbol": "₹",
+            "country": "IN",
+            "language": "en",
+            "quotePrecisions": {
+                "btc": 8,
+                "inr": 2,
+                "usdt": 2,
+                "idr": 0,
+                "rub": 2,
+                "uah": 2,
+                "ngn": 2,
+                "sar": 2,
+                "eur": 2,
+                "try": 2
+            },
+            "depositModes": [{
+                "type": "instant",
+                "uiType": "instant-gateway_mobikwik",
+                "name": "Instant Deposit (UPI only)",
+                "mode": "instant_6-mode_1",
+                "disabled": false,
+                "status": "AVAILABLE",
+                "limits": "UPI | Automatic | Available 24x7 | Minimum deposit amount: INR 100 | Fee (inclusive of all taxes): 0.236%",
+                "requiredPaymentOptionType": "upi",
+                "sort_order": 8
+            }],
+            "withdrawalModes": [{
+                    "type": "instant",
+                    "uiType": "standard",
+                    "name": "Instant withdrawal (Recommended)",
+                    "mode": "instant_1-mode_1",
+                    "disabled": false,
+                    "status": "AVAILABLE",
+                    "fee": 10,
+                    "feeDescription": "Fee (inclusive of all taxes): ₹10 per transaction",
+                    "limits": "Max ₹2 lakhs per transaction | Total ₹1 Crore per day",
+                    "requiredPaymentOptionType": "bankaccount",
+                    "sort_order": 1
+                },
+                {
+                    "type": "instant",
+                    "uiType": "standard",
+                    "name": "NEFT Withdrawal",
+                    "mode": "instant_1-mode_2",
+                    "disabled": false,
+                    "status": "AVAILABLE",
+                    "fee": 5,
+                    "feeDescription": "Fee (inclusive of all taxes): ₹5 per transaction",
+                    "limits": "Max ₹50 lakhs per transaction | Total ₹1 Crore per day | Within 30 minutes - few hours during banking hours and weekdays",
+                    "requiredPaymentOptionType": "bankaccount",
+                    "sort_order": 2
+                }
+            ],
+            "code": 1,
+            "name": "Rupee",
+            "category": "fiat",
+            "isQuote": true,
+            "quoteSortOrder": 1,
+            "precision": 2,
+            "walletPrecision": 2,
+            "withdrawFee": 0,
+            "minWithdrawAmount": 1000,
+            "maxWithdrawAmount": 1000000,
+            "cryptoRate": {
+                "isPreferredQuote": true
+            },
+            "confirmations": 0,
+            "statusInfo": {
+                "android": {
+                    "displayInterval": 1,
+                    "id": "54",
+                    "maxDisplayCount": 999999,
+                    "validTill": "2021-04-15T23:59:59+05:30",
+                    "title": "📢 3 - 4 hours delay in INR deposits",
+                    "message": "Unfortunately this is something not under our control and due to processing delays from our banking partner's end. However, we're doing everything we can to help our partners expedite the processing of your INR deposits. We request you to plan your INR deposits accordingly. Sorry for the inconvenience. 🙏",
+                    "type": "Warning"
+                },
+                "iOS": {
+                    "displayInterval": 1,
+                    "id": "54",
+                    "maxDisplayCount": 999999,
+                    "validTill": "2021-04-15T23:59:59+05:30",
+                    "title": "📢 3 - 4 hours delay in INR deposits",
+                    "message": "Unfortunately this is something not under our control and due to processing delays from our banking partner's end. However, we're doing everything we can to help our partners expedite the processing of your INR deposits. We request you to plan your INR deposits accordingly. Sorry for the inconvenience. 🙏",
+                    "type": "Warning"
+                },
+                "web": {
+                    "displayInterval": 1,
+                    "id": "54",
+                    "maxDisplayCount": 999999,
+                    "validTill": "2021-04-15T23:59:59+05:30",
+                    "message": "📢 3 - 4 hours delay in INR deposits. Unfortunately this is something not under our control and due to processing delays from our banking partner's end. However, we're doing everything we can to help our partners expedite the processing of your INR deposits. We request you to plan your INR deposits accordingly. Sorry for the inconvenience. 🙏",
+                    "type": "Warning"
+                }
+            },
+            "isUnsupported": true
+        },
+        {
+            "type": "idr",
+            "icon": "https://media.wazirx.com/media/idr/<SIZE>.png",
+            "symbol": "Rp",
+            "country": "ID",
+            "language": "id",
+            "quotePrecisions": {
+                "btc": 8,
+                "inr": 2,
+                "usdt": 2,
+                "idr": 0,
+                "rub": 2,
+                "uah": 2,
+                "ngn": 2,
+                "sar": 2,
+                "eur": 2,
+                "try": 2
+            },
+            "code": 50,
+            "name": "Rupiah",
+            "category": "fiat",
+            "isQuote": true,
+            "quoteSortOrder": 1000002,
+            "precision": 0,
+            "walletPrecision": 2,
+            "withdrawFee": 0,
+            "minWithdrawAmount": 50,
+            "maxWithdrawAmount": 500000,
+            "cryptoRate": {
+                "isPreferredQuote": true,
+                "useInternationalPrice": true
+            },
+            "confirmations": 0,
+            "isUnsupported": true,
+            "depositModes": [],
+            "withdrawalModes": [],
+            "disableDeposit": true,
+            "disableWithdrawal": true
+        }
+    ]
+}
