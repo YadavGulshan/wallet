@@ -41,6 +41,7 @@ class SignUpWidget extends StatelessWidget {
                   Spacer(),
                   InkwellButton(
                     text: "Login",
+                    // ontap: ,
                   ),
                   SizedBox(
                     height: 20,
@@ -69,14 +70,17 @@ class InkwellButton extends StatelessWidget {
     Key? key,
     required this.text,
     this.color = Colors.white,
+    // required this.ontap,
   }) : super(key: key);
   final String text;
   final Color color;
+  // final VoidCallback ontap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         HapticFeedback.heavyImpact();
+        // ontap();
       },
       child: Container(
         height: 45,
