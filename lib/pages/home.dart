@@ -40,6 +40,7 @@ class _home_pageState extends State<home_page> {
     final double height = MediaQuery.of(context).size.height;
     // scaffold the app with the standard app bar and nav bar
     return Scaffold(
+      // backgroundColor: Colors.black,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(height / 16),
         child: AppBar(
@@ -92,6 +93,7 @@ class _home_pageState extends State<home_page> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 30,
+                      color: Colors.white,
                     ),
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BoughtCoins extends StatelessWidget {
   const BoughtCoins({
@@ -54,6 +55,7 @@ class BoughtCoins extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
+                  // color: Colors.black,
                 ),
                 height: MediaQuery.of(context).size.height / 10,
                 width: MediaQuery.of(context).size.width,
@@ -68,26 +70,36 @@ class BoughtCoins extends StatelessWidget {
                       height: 50,
                       child: Row(
                         children: <Widget>[
-                          Image.asset(
-                            "assets/images/google.jpg",
-                            height: 50,
-                            width: 40,
+                          const Icon(
+                            Icons.monetization_on_rounded,
+                            size: 40.0,
+                            // color: Colors.white,
                           ),
+                          // SvgPicture.asset(
+                          //   "assets/images/.svg",
+                          //   height: 40,
+                          //   width: 40,
+                          //   fit: BoxFit.contain,
+                          // ),
                           const SizedBox(
-                            width: 10,
+                            width: 20,
                           ),
                           Column(
                             children: [
                               // Coin Name.
                               Text(
                                 coinName[index],
+                                // style: TextStyle(
+                                // color: Colors.white, fontSize: 25)
                                 style: Theme.of(context).textTheme.headline6,
                               ),
                               const Spacer(),
                               // SubName
                               const Text(
                                 "GMY",
-                                style: TextStyle(fontSize: 10),
+                                style: TextStyle(
+                                  fontSize: 10,
+                                ),
                               ),
                               const Spacer(),
                             ],

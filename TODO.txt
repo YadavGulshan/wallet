@@ -1,0 +1,4 @@
+Use Rive Animation.
+Rewamp the design to dark mode.
+Use Serializer for extracting data from api.
+Authentication has been ignored for design.

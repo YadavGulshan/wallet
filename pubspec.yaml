@@ -43,9 +43,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
   flutter_native_splash: ^1.2.0
-  
+
 flutter_native_splash:
   color: "#030303"
   image: "assets/BufferOverflow.png"
@@ -65,6 +64,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/images/google.jpg
 
   fonts:
     - family: SourceSanProBlack

@@ -42,6 +42,8 @@ class _TestingpageState extends State<Testingpage> {
     final double height2 = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      // backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: tabs[_page],
 
       /// Our animated navigation bar.

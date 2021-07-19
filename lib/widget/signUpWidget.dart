@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/painting/gradient.dart' as lineargradient;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
+import 'package:wallet/pages/testing.dart';
 
 class SignUpWidget extends StatelessWidget {
   const SignUpWidget({Key? key}) : super(key: key);
@@ -14,62 +15,83 @@ class SignUpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff210729),
-      body: Column(
-        children: [
-          const Spacer(),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 2,
-            child: const RiveAnimation.asset(
-              // "assets/bear_avatar_remix.riv",
-              "assets/bear_avatar_remix (1).riv",
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: lineargradient.LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: <Color>[
+              Color(0xff210729),
+              Color(0xff210729),
+              Color(0xff210729),
+              Color(0xff210729),
+              // Color(0xff210729),
+              // Color(0xff210729),
+              // Color(0xff210729),
+              Color(0xff50defa),
+              Color(0xffcaed79),
+            ],
           ),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              // padding: const EdgeInsets.all(80),
-              height: MediaQuery.of(context).size.height / 4,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                // color: Colors.blue.shade200,
-                gradient: const lineargradient.LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: <Color>[
-                      Color(0xffc634eb),
-                      Color(0xff34bdeb),
-                    ]),
+        ),
+        child: Column(
+          children: [
+            const Spacer(),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 2,
+              child: const RiveAnimation.asset(
+                // "assets/bear_avatar_remix (1).riv",
+                // "assets/bear1.riv",
+                "assets/bear_avatar_remix.riv",
               ),
-              child: Center(
-                  child: Column(
-                children: const <Widget>[
-                  Spacer(),
-                  InkwellButton(
-                    text: "Login",
-                    // ontap: ,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  InkwellButton(
-                    text: "SignUp",
-                  ),
-                  Spacer()
-                ],
-              )),
             ),
-          ),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-          const Spacer(),
-        ],
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                // padding: const EdgeInsets.all(80),
+                height: MediaQuery.of(context).size.height / 4,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  // color: Colors.blue.shade200,
+                  gradient: const lineargradient.LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: <Color>[
+                        Color(0xffc634eb),
+                        Color(0xff34bdeb),
+                        // Color(0xff79e7ed),
+                      ]),
+                ),
+                child: Center(
+                    child: Column(
+                  children: const <Widget>[
+                    Spacer(),
+                    InkwellButton(
+                      text: "Login",
+                      // ontap: ,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    InkwellButton(
+                      text: "SignUp",
+                    ),
+                    Spacer()
+                  ],
+                )),
+              ),
+            ),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }
@@ -90,6 +112,11 @@ class InkwellButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         HapticFeedback.heavyImpact();
+        Navigator.push<void>(
+          context,
+          MaterialPageRoute<void>(
+              builder: (BuildContext context) => const Testingpage()),
+        );
         // ontap();
       },
       child: Container(
