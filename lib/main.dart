@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wallet/authentication/login_page.dart';
-import 'package:wallet/pages/testing.dart';
 import 'package:wallet/pages/userPages/Invite_a_Friend.dart';
 import 'package:wallet/pages/userPages/aboutUsPage.dart';
 
