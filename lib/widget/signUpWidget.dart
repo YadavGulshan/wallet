@@ -1,7 +1,9 @@
-import 'dart:ui';
+// ignore_for_file: implementation_imports
 
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/src/painting/gradient.dart' as lineargradient;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
 
@@ -18,7 +20,8 @@ class SignUpWidget extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height / 2,
             child: const RiveAnimation.asset(
-              "assets/bear_avatar_remix.riv",
+              // "assets/bear_avatar_remix.riv",
+              "assets/bear_avatar_remix (1).riv",
             ),
           ),
           const Spacer(),
@@ -33,7 +36,14 @@ class SignUpWidget extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 4,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: Colors.blue.shade200,
+                // color: Colors.blue.shade200,
+                gradient: const lineargradient.LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color(0xffc634eb),
+                      Color(0xff34bdeb),
+                    ]),
               ),
               child: Center(
                   child: Column(
