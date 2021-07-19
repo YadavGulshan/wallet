@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
 
 class ListCoin extends StatefulWidget {
   const ListCoin({
@@ -8,7 +8,7 @@ class ListCoin extends StatefulWidget {
     required this.coinName,
     required this.subName,
     required this.iconLinks,
-    // required this.prices,
+    required this.prices,
     required this.amountController,
   }) : super(key: key);
 
@@ -17,7 +17,7 @@ class ListCoin extends StatefulWidget {
   final List<dynamic> coinName;
   final List<dynamic> subName;
   final List<dynamic> iconLinks;
-  // final List<dynamic> prices;
+  final List<dynamic> prices;
 
   final TextEditingController amountController;
   @override
@@ -142,7 +142,8 @@ class _ListCoinState extends State<ListCoin> {
                   ),
 
                   // Coin price.
-                  Text("", style: const TextStyle(fontSize: 20)),
+                  const Text("Work in Progress.",
+                      style: TextStyle(fontSize: 20)),
                   // TODO: Change this to a stateful widget. And change the price on by using constant network calls.
                 ],
               ),
@@ -151,15 +152,5 @@ class _ListCoinState extends State<ListCoin> {
         );
       },
     );
-  }
-}
-
-class priceRenderer extends StatelessWidget {
-  priceRenderer({
-    Key? key,
-  }) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Text("", style: const TextStyle(fontSize: 20));
   }
 }

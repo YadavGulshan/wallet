@@ -1,13 +1,13 @@
 // ignore_for_file: always_specify_types, duplicate_ignore
 
-import 'dart:convert';
+// import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:http/retry.dart';
-import 'package:wallet/pages/AddCoinPage/list_coins.dart';
-import 'package:http/http.dart' as http;
+// import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:http/retry.dart';
+// import 'package:wallet/pages/AddCoinPage/list_coins.dart';
+// import 'package:http/http.dart' as http;
 
 // ignore: camel_case_types
 class AddCoinPage extends StatefulWidget {
@@ -19,22 +19,22 @@ class AddCoinPage extends StatefulWidget {
 
 // ignore: camel_case_types
 class _AddCoinPageState extends State<AddCoinPage> {
-  String url = "https://x.wazirx.com/api/v2/global_configs";
+  // String url = "https://x.wazirx.com/api/v2/global_configs";
 
   // String priceUrl = "https://x.wazirx.com/wazirx-falcon/api/v2.0/crypto_rates";
   // Coin names.
-  late List<dynamic> coinName = [];
-  late List<dynamic> subName = [];
-  late List<dynamic> iconLinks = [];
-  // late List<dynamic> price = [];
+  // late List<dynamic> coinName = [];
+  // late List<dynamic> subName = [];
+  // late List<dynamic> iconLinks = [];
+  // late Map<String, dynamic> coinInfo = {};
 
-  final TextEditingController _amountController = TextEditingController();
+  // final TextEditingController _amountController = TextEditingController();
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getJsonData(); // Method.
+    // getJsonData(); // Method.
     // getPrice();
   }
 
@@ -62,33 +62,34 @@ class _AddCoinPageState extends State<AddCoinPage> {
           ); // Lol change this!
           return HapticFeedback.heavyImpact();
         },
-        child: ListCoin(
-          coinName: coinName,
-          subName: subName,
-          iconLinks: iconLinks,
-          // prices: price,
-          amountController: _amountController,
-        ),
+        child: const Text("Work in Progress."),
+        // child: ListCoin(
+        //   coinName: coinName,
+        //   subName: subName,
+        //   iconLinks: iconLinks,
+        //   // prices: price,
+        //   amountController: _amountController,
+        // ),
       ),
     );
   }
 
-  Future<String> getJsonData() async {
-    final response = await http.get(Uri.parse(url));
-    debugPrint(response.body);
-    setState(() {
-      final converDataToJson = json.decode(response.body);
-      for (var i = 0; i < 224; i++) {
-        if (converDataToJson["currencies"][i]["category"] == "crypto") {
-          coinName.add(converDataToJson["currencies"][i]["name"]);
-          subName.add(converDataToJson["currencies"][i]["type"]);
-          iconLinks.add(converDataToJson["currencies"][i]["icon"]);
-        }
-      }
-    });
-    debugPrint(coinName.toString());
-    return "Sucess";
-  }
+  // Future<String> getJsonData() async {
+  //   final response = await http.get(Uri.parse(url));
+  //   debugPrint(response.body);
+  //   setState(() {
+  //     final converDataToJson = json.decode(response.body);
+  //     for (var i = 0; i < 224; i++) {
+  //       if (converDataToJson["currencies"][i]["category"] == "crypto") {
+  //         coinName.add(converDataToJson["currencies"][i]["name"]);
+  //         subName.add(converDataToJson["currencies"][i]["type"]);
+  //         iconLinks.add(converDataToJson["currencies"][i]["icon"]);
+  //       }
+  //     }
+  //   });
+  //   debugPrint(coinName.toString());
+  //   return "Sucess";
+  // }
 
   // Future<int> getPrice() async {
   //   final response = await http.get(Uri.parse(priceUrl));
@@ -106,3 +107,6 @@ class _AddCoinPageState extends State<AddCoinPage> {
   //   return 0;
   // }
 }
+
+
+// TODO: Use json serializer
