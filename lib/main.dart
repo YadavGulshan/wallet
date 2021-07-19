@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      // home: const LoginPage(),
-      home: const Testingpage(),
+      home: const LoginPage(),
+      // home: const Testingpage(),
       routes: <String, WidgetBuilder>{
         "/aboutus": (BuildContext context) => const AboutUs(),
         "/Invite": (BuildContext context) => const InviteFriend(),

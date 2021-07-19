@@ -1,66 +1,99 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:wallet/widget/google_Sign_In_Button_Widget.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:rive/rive.dart';
 
 class SignUpWidget extends StatelessWidget {
   const SignUpWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => buildSignUp(context);
-  Widget buildSignUp(BuildContext context) => SafeArea(
-        child: Column(
-          children: <Widget>[
-            const Spacer(),
-
-            // Using a SVG file, so that it can be used irrespective of device size.
-            SvgPicture.asset(
-              "assets/images/light_house.svg",
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xff210729),
+      body: Column(
+        children: [
+          const Spacer(),
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 2,
+            child: const RiveAnimation.asset(
+              "assets/bear_avatar_remix.riv",
+            ),
+          ),
+          const Spacer(),
+          const Spacer(),
+          const Spacer(),
+          const Spacer(),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              // padding: const EdgeInsets.all(80),
               height: MediaQuery.of(context).size.height / 4,
-              width: MediaQuery.of(context).size.width,
-            ),
-            const Spacer(),
-
-            // Alligning Welcome text at center, though it can also be achieved using Center widget.
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                width: MediaQuery.of(context).size.width,
-                child: const Text(
-                  "Welcome",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.blue.shade200,
               ),
+              child: Center(
+                  child: Column(
+                children: const <Widget>[
+                  Spacer(),
+                  InkwellButton(
+                    text: "Login",
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  InkwellButton(
+                    text: "SignUp",
+                  ),
+                  Spacer()
+                ],
+              )),
             ),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const GoogleSignInButtonWidget(),
-            const Spacer(),
+          ),
+          const Spacer(),
+          const Spacer(),
+          const Spacer(),
+          const Spacer(),
+          const Spacer(),
+        ],
+      ),
+    );
+  }
+}
 
-            // Some recognition for me :)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                Text("Made With "),
-                FaIcon(
-                  FontAwesomeIcons.heart,
-                  color: Colors.red,
-                ),
-                Text(" in India by Gulshan"),
-              ],
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-          ],
+class InkwellButton extends StatelessWidget {
+  const InkwellButton({
+    Key? key,
+    required this.text,
+    this.color = Colors.white,
+  }) : super(key: key);
+  final String text;
+  final Color color;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        HapticFeedback.heavyImpact();
+      },
+      child: Container(
+        height: 45,
+        width: MediaQuery.of(context).size.width / 3,
+
+        // color: Colors.white,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(20),
         ),
-      );
+        child: Center(
+          child: Text(
+            text,
+            style: GoogleFonts.stylish(fontSize: 20),
+          ),
+        ),
+      ),
+    );
+  }
 }
