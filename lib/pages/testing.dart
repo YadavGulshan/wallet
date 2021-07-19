@@ -15,7 +15,7 @@ class Testingpage extends StatefulWidget {
 
 class _TestingpageState extends State<Testingpage> {
   /// Current User data.
-  final User? user = FirebaseAuth.instance.currentUser;
+  // final User? user = FirebaseAuth.instance.currentUser;
 
   /// Initial Page; i.e Homepage
   int _page = 0;

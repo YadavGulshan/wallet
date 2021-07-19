@@ -35,13 +35,13 @@ class WalletCard extends StatelessWidget {
                   const Text(
                     "Balance:",
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 30,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
                     "9999999",
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                 ],
               ),

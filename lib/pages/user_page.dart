@@ -1,14 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 import 'package:wallet/pages/userPages/Account_info.dart';
 import 'package:wallet/pages/userPages/Invite_a_Friend.dart';
 import 'package:wallet/pages/userPages/Notifications_Settings.dart';
 import 'package:wallet/pages/userPages/aboutUsPage.dart';
-import 'package:wallet/provider/google_sign_in.dart';
+// import 'package:wallet/provider/google_sign_in.dart';
 import 'package:wallet/widget/container_widget_for_list.dart';
 import 'package:wallet/widget/inkwellButtonWIdget.dart';
 
@@ -21,7 +21,7 @@ class UserProfile extends StatefulWidget {
 
 class _UserProfileState extends State<UserProfile> {
   // Get The current user data from firebase.
-  final User? user = FirebaseAuth.instance.currentUser;
+  // final User? user = FirebaseAuth.instance.currentUser;
 
   // Pages to be routed to.
   List<Widget> pagesToRoute = <Widget>[
@@ -41,16 +41,17 @@ class _UserProfileState extends State<UserProfile> {
           const Spacer(),
 
           // Avatar of current user.
-          CircleAvatar(
-            radius: 70,
-            backgroundImage: NetworkImage(user!.photoURL.toString()),
-          ),
+          const CircleAvatar(
+              radius: 70,
+              // backgroundImage: NetworkImage(user!.photoURL.toString()),
+              backgroundImage: NetworkImage("assets/images/google.jpg")),
 
           const Spacer(),
 
           // User name of current user.
           Text(
-            user!.displayName.toString(),
+            // user!.displayName.toString(),
+            "Gulshan Yadav",
             style: GoogleFonts.lato(
               textStyle: Theme.of(context).textTheme.headline5,
               // fontWeight: FontWeight.bold,
@@ -93,9 +94,10 @@ class _UserProfileState extends State<UserProfile> {
               HapticFeedback.heavyImpact();
 
               // Log out from the current user.
-              final GoogleSignInProvider provider =
-                  Provider.of<GoogleSignInProvider>(context, listen: false);
-              provider.logout();
+
+              // final GoogleSignInProvider provider =
+              //     Provider.of<GoogleSignInProvider>(context, listen: false);
+              // provider.logout();
             },
           ),
 

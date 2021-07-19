@@ -44,7 +44,8 @@ class _home_pageState extends State<home_page> {
         preferredSize: Size.fromHeight(height / 16),
         child: AppBar(
           title: Text(
-            "Hello, ${user!.displayName.toString()}",
+            "Hello",
+            // "Hello, ${user!.displayName.toString()}",
             style: Theme.of(context).textTheme.headline6,
           ),
           elevation: 0.0,
@@ -52,16 +53,17 @@ class _home_pageState extends State<home_page> {
 
           /// Automatically imply leading removes the back button from the appbar, if set to false.
           automaticallyImplyLeading: false,
-          actions: <Widget>[
+          actions: const <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Center(
                 heightFactor: 1,
                 widthFactor: 1,
                 child: CircleAvatar(
                   backgroundColor: Colors.blueAccent,
                   // Show the image of current user.
-                  backgroundImage: NetworkImage(user!.photoURL.toString()),
+                  // backgroundImage: NetworkImage(user!.photoURL.toString()),
+                  backgroundImage: NetworkImage("assets/images/google.jpg"),
                 ),
               ),
             )
