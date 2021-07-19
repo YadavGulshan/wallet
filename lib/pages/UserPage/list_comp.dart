@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class BoughtCoins extends StatelessWidget {
   const BoughtCoins({
@@ -85,7 +84,7 @@ class BoughtCoins extends StatelessWidget {
                             width: 20,
                           ),
                           Column(
-                            children: [
+                            children: <Widget>[
                               // Coin Name.
                               Text(
                                 coinName[index],

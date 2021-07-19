@@ -77,7 +77,7 @@ class ListCoin extends StatelessWidget {
                             width: 10,
                           ),
                           Column(
-                            children: [
+                            children: <Widget>[
                               // Coin Name.
                               Text(
                                 coinName[index],

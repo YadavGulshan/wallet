@@ -34,7 +34,7 @@ class SignUpWidget extends StatelessWidget {
           ),
         ),
         child: Column(
-          children: [
+          children: <Widget>[
             const Spacer(),
             SizedBox(
               height: MediaQuery.of(context).size.height / 2,
