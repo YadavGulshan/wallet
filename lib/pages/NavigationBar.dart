@@ -5,14 +5,14 @@ import 'package:wallet/pages/add_coins.dart';
 import 'package:wallet/pages/home.dart';
 import 'package:wallet/pages/user_page.dart';
 
-class Testingpage extends StatefulWidget {
-  const Testingpage({Key? key}) : super(key: key);
+class NavigationBar extends StatefulWidget {
+  const NavigationBar({Key? key}) : super(key: key);
 
   @override
-  _TestingpageState createState() => _TestingpageState();
+  _NavigationBarState createState() => _NavigationBarState();
 }
 
-class _TestingpageState extends State<Testingpage> {
+class _NavigationBarState extends State<NavigationBar> {
   /// Current User data.
   // final User? user = FirebaseAuth.instance.currentUser;
 

@@ -6,10 +6,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/painting/gradient.dart' as lineargradient;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
-import 'package:wallet/pages/testing.dart';
+import 'package:wallet/pages/NavigationBar.dart';
 
-class SignUpWidget extends StatelessWidget {
-  const SignUpWidget({Key? key}) : super(key: key);
+class StartUpScreen extends StatelessWidget {
+  const StartUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +115,7 @@ class InkwellButton extends StatelessWidget {
         Navigator.push<void>(
           context,
           MaterialPageRoute<void>(
-              builder: (BuildContext context) => const Testingpage()),
+              builder: (BuildContext context) => const NavigationBar()),
         );
         // ontap();
       },
