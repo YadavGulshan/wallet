@@ -14,8 +14,11 @@ class StartUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Backgroung color of our application.
       backgroundColor: const Color(0xff210729),
+
       body: Container(
+        // Gradient coloring
         decoration: const BoxDecoration(
           gradient: lineargradient.LinearGradient(
             begin: Alignment.topLeft,
@@ -38,6 +41,8 @@ class StartUpScreen extends StatelessWidget {
             const Spacer(),
             SizedBox(
               height: MediaQuery.of(context).size.height / 2,
+
+              // Our animating rive file.
               child: const RiveAnimation.asset(
                 // "assets/bear_avatar_remix (1).riv",
                 // "assets/bear1.riv",
@@ -51,6 +56,8 @@ class StartUpScreen extends StatelessWidget {
             const Spacer(),
             Padding(
               padding: const EdgeInsets.all(20.0),
+
+              // Container containing the signin and signUp buttons.
               child: Container(
                 // padding: const EdgeInsets.all(80),
                 height: MediaQuery.of(context).size.height / 4,
@@ -112,6 +119,8 @@ class InkwellButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         HapticFeedback.heavyImpact();
+
+        // Route to home, bypassing the authentication.
         Navigator.push<void>(
           context,
           MaterialPageRoute<void>(
