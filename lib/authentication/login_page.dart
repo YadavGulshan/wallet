@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
       body: ChangeNotifierProvider(
         create: (BuildContext context) => GoogleSignInProvider(),
 
-        /// StreanBuilder is a helper class that allows us to create a stream of
+        /// StreamBuilder is a helper class that allows us to create a stream of
         /// values from a provider.
         child: StreamBuilder<User?>(
             // Notifies the stream about the state of user profile changes.
