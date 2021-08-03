@@ -32,7 +32,9 @@ class _NavigationBarState extends State<NavigationBar> {
   List<Color> myColors = <Color>[
     const Color(0xff1ced8f),
     const Color(0xff63ECFF),
-    const Color(0xffd3f74f),
+    const Color(0xffc634eb),
+
+    // const Color(0xffd3f74f),
     // Colors.blueAccent,
   ];
   @override

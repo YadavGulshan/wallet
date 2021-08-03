@@ -45,7 +45,7 @@ class _home_pageState extends State<home_page> {
         preferredSize: Size.fromHeight(height / 16),
         child: AppBar(
           title: Text(
-            "Hello",
+            "Hello, Gulshan Yadav",
             // "Hello, ${user!.displayName.toString()}",
             style: Theme.of(context).textTheme.headline6,
           ),
@@ -64,7 +64,7 @@ class _home_pageState extends State<home_page> {
                   backgroundColor: Colors.blueAccent,
                   // Show the image of current user.
                   // backgroundImage: NetworkImage(user!.photoURL.toString()),
-                  backgroundImage: NetworkImage("assets/images/google.jpg"),
+                  // backgroundImage: NetworkImage("assets/images/google.jpg"),
                 ),
               ),
             )
@@ -73,6 +73,7 @@ class _home_pageState extends State<home_page> {
       ),
       body: Center(
         child: Container(
+          color: Colors.grey.shade200,
           // color: const Color(0xff1ced8f),
           padding: const EdgeInsets.all(8.0),
           // color: Colors.black,
@@ -106,9 +107,12 @@ class _home_pageState extends State<home_page> {
                     ScrollController myScrollController) {
                   return Container(
                       // color: Colors.black,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
                       ),
                       child: BoughtCoins(
                         scrollController: myScrollController,

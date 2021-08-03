@@ -15,8 +15,7 @@ class StartUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // Backgroung color of our application.
-      backgroundColor: const Color(0xff210729),
-
+      // backgroundColor: const Color(0xff210729),
       body: Container(
         // Gradient coloring
         decoration: const BoxDecoration(
@@ -36,68 +35,69 @@ class StartUpScreen extends StatelessWidget {
             ],
           ),
         ),
-        child: Column(
-          children: <Widget>[
-            const Spacer(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 2,
+        child: SafeArea(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 2,
 
-              // Our animating rive file.
-              child: const RiveAnimation.asset(
-                // "assets/bear_avatar_remix (1).riv",
-                // "assets/bear1.riv",
-                "assets/bear_avatar_remix.riv",
-              ),
-            ),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-
-              // Container containing the signin and signUp buttons.
-              child: Container(
-                // padding: const EdgeInsets.all(80),
-                height: MediaQuery.of(context).size.height / 4,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  // color: Colors.blue.shade200,
-                  gradient: const lineargradient.LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: <Color>[
-                        Color(0xffc634eb),
-                        Color(0xff34bdeb),
-                        // Color(0xff79e7ed),
-                      ]),
+                // Our animating rive file.
+                child: const RiveAnimation.asset(
+                  // "assets/bear_avatar_remix (1).riv",
+                  // "assets/bear1.riv",
+                  "assets/bear_avatar_remix.riv",
                 ),
-                child: Center(
-                    child: Column(
-                  children: const <Widget>[
-                    Spacer(),
-                    InkwellButton(
-                      text: "Login",
-                      // ontap: ,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InkwellButton(
-                      text: "SignUp",
-                    ),
-                    Spacer()
-                  ],
-                )),
               ),
-            ),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-          ],
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+
+                // Container containing the signin and signUp buttons.
+                child: Container(
+                  // padding: const EdgeInsets.all(80),
+                  height: MediaQuery.of(context).size.height / 4,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    // color: Colors.blue.shade200,
+                    gradient: const lineargradient.LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: <Color>[
+                          Color(0xffc634eb),
+                          Color(0xff34bdeb),
+                          // Color(0xff79e7ed),
+                        ]),
+                  ),
+                  child: Center(
+                      child: Column(
+                    children: const <Widget>[
+                      Spacer(),
+                      InkwellButton(
+                        text: "Login",
+                        // ontap: ,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      InkwellButton(
+                        text: "SignUp",
+                      ),
+                      Spacer()
+                    ],
+                  )),
+                ),
+              ),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+            ],
+          ),
         ),
       ),
     );

@@ -42,9 +42,11 @@ class _UserProfileState extends State<UserProfile> {
 
           // Avatar of current user.
           const CircleAvatar(
-              radius: 70,
-              // backgroundImage: NetworkImage(user!.photoURL.toString()),
-              backgroundImage: NetworkImage("assets/images/google.jpg")),
+            radius: 70,
+            // backgroundImage: NetworkImage(user!.photoURL.toString()),
+            // backgroundImage: NetworkImage("assets/images/google.jpg")
+            backgroundColor: Colors.blue,
+          ),
 
           const Spacer(),
 
